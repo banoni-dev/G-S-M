@@ -4,9 +4,11 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { it } from 'node:test'
 import Link from 'next/link'
+import { ModeToggle } from '@/components/mode-toggle'
 
 const navigation = [
   { name: 'Home', href: '#', current: true },
+  { name: 'Services', href: '#', current: false },
   { name: 'Pricing', href: '#', current: false },
   { name: 'Login', href: '#', current: false },
 ]
@@ -17,7 +19,7 @@ function classNames(...classes: string[]) {
 
 export default function NavBar() {
   return (
-    <nav className='w-full h-[70px] m-auto flex justify-between item-center border-b border-[rgba(255,255,255,0.01)] fixed'>
+    <nav className='w-full h-[70px] m-auto flex justify-between item-center border-b border-[rgba(255,255,255,0.01)] z-40 fixed'>
      <div className='w-[70vw] m-auto flex justify-between items-center'>
          <div className="left flex items-center">
             LOGO
@@ -38,6 +40,7 @@ export default function NavBar() {
                 </Link></li>
             ))}
             </ul> 
+            <ModeToggle />
         </div>
       </div> 
     </nav>
