@@ -18,6 +18,7 @@ export default function Home() {
            <NavBar />
 
            <Welcome />
+           <ScrollArrow />
            <BackgroundBeams />
            <Globe />
            <Services />
