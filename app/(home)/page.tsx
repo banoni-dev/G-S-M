@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import Welcome from "./components/Welcome";
 import { Spotlight } from "@/components/ui/spotlight";
 import Services from "./components/Services";
+import Pricing from "./components/Pricing";
 export default function Home() {
   return (
     <main className="w-full">
@@ -18,6 +19,7 @@ export default function Home() {
            <BackgroundBeams />
            <Globe />
            <Services />
+           <Pricing />
     </main>
   );
 }
