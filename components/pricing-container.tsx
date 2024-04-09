@@ -7,42 +7,12 @@ const plans = [
     {
         "name": "Basic",
         "active": false,
-        "price": {
-            "annually": "199.99",
-            "monthly": "19.99",
-        },
+        "price": 1,
         "features": {
-            "storage": "500 GB",
-            "users": 2,
-            "sendUp": "3 GB",
+            "storage": "24/ 7 Support"
         }
     },
-    {
-        "name": "Professional",
-        "active": true,
-        "price": {
-            "annually": "249.99",
-            "monthly": "24.99",
-        },
-        "features": {
-            "storage": "1 TB",
-            "users": 5,
-            "sendUp": "10 GB",
-        }
-    },
-    {
-        "name": "Master",
-        "active": false,
-        "price": {
-            "annually": "399.99",
-            "monthly": "39.99",
-        },
-        "features": {
-            "storage": "2 TB",
-            "users": 10,
-            "sendUp": "20 GB",
-        }
-    },
+  
 ];
 
 export function PropDivider() {
@@ -71,20 +41,16 @@ export function Plan({
 			
 			<h2 className="text-lg">{name}</h2>
 			
-			<h1 className={`flex items-center gap-[0.7rem] text-7xl -tracking-[0.03em] mt-[1.45rem] mb-[2.1rem] ${
+			<h1 className={`flex items-center gap-[0.7rem] text-xl -tracking-[0.03em] mt-[1.45rem] mb-[2.1rem] ${
 				(active)? "text-white" : "text-DarkGrayishBlue"
-			}`}>
-				<span className="text-[2.5rem]">$</span>
-				500
+			}`}>100 Credits -->{" "}
+				{price}$
 			</h1>
 			
 			<div className="flex flex-col items-center gap-[0.95rem] w-full text-[0.95rem]">
 				<PropDivider />
-				<h3>{features.storage} Storage</h3>
+				<h3>{features.storage}</h3>
 				<PropDivider />
-				<h3>{features.users} Users Allowed</h3>
-				<PropDivider />
-				<h3>Send up to {features.sendUp}</h3>
 				<PropDivider />
 			</div>
 

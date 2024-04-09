@@ -19,7 +19,7 @@ function classNames(...classes: string[]) {
 
 export default function NavBar() {
   return (
-    <nav className='w-full h-[70px] m-auto flex justify-between item-center border-b border-[rgba(255,255,255,0.01)] z-40 fixed'>
+    <nav className='w-full backdrop-blur-lg h-[70px] m-auto flex justify-between item-center border-b border-[rgba(255,255,255,0.01)] z-40 fixed'>
      <div className='w-[70vw] m-auto flex justify-between items-center'>
          <div className="left flex items-center">
             LOGO

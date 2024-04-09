@@ -70,6 +70,7 @@ const config = {
       animation: {
         spotlight: "spotlight 2s ease .75s 1 forwards",
         shimmer: "shimmer 2s linear infinite",
+        chevron: 'chevron 3s ease-out infinite',
       },
       keyframes: {
         spotlight: {
@@ -90,10 +91,16 @@ const config = {
             backgroundPosition: "-200% 0",
           },
         },
+        chevron: {
+          "25%": { opacity: "1" },
+          "33.3%": { opacity: "1", transform: "translateY(0.6rem * 3.8)" },
+          "66.6%": { opacity: "1", transform: "translateY(0.6rem * 5.2)" },
+          "100%": { opacity: "0", transform: "translateY(0.6rem * 8) scale(0.5)" },
+        },
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), addVariablesForColors
+  plugins: [require("tailwindcss-animate"), addVariablesForColors, require('@tailwindcss/typography'),
 ],
 } satisfies Config
 
