@@ -3,9 +3,9 @@ import { ModeToggle } from "@/components/mode-toggle";
 import Link from "next/link";
 
 const navigation = [
-  { name: "Home", href: "#", current: true },
-  { name: "Services", href: "#", current: false },
-  { name: "Pricing", href: "#", current: false },
+  { name: "Home", href: "#home", current: true },
+  { name: "Services", href: "#services", current: false },
+  { name: "Pricing", href: "#pricing", current: false },
   { name: "Login", href: "#", current: false },
 ];
 
