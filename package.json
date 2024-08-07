@@ -28,6 +28,7 @@
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.1.4",
     "next-themes": "^0.3.0",
+    "pg": "^8.12.0",
     "postgres": "^3.4.4",
     "react": "^18",
     "react-dom": "^18",

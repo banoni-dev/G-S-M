@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 
@@ -410,8 +409,7 @@ export function Globe() {
             duration: 1,
           }}
           className="div"
-        >
-        </motion.div>
+        ></motion.div>
         <div className="absolute w-full h-50 bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
         <div className="absolute w-full -bottom-20 h-50 md:h-full z-10">
           <World data={sampleArcs} globeConfig={globeConfig} />
