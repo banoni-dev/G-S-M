@@ -1,14 +1,15 @@
 import {
   integer,
   pgTable,
-  serial,
   text,
   timestamp,
+  uuid,
   varchar,
 } from "drizzle-orm/pg-core";
+import { v4 as uuidv4 } from "uuid";
 
 export const users = pgTable("users", {
-  id: serial("id").primaryKey(),
+  id: uuid("id").primaryKey().default(uuidv4()),
   username: varchar("username", { length: 50 }).notNull().unique(),
   email: varchar("email", { length: 100 }).notNull().unique(),
   firstName: text("first_name").notNull(),
@@ -23,14 +24,14 @@ export const users = pgTable("users", {
 });
 
 export const services = pgTable("services", {
-  id: serial("id").primaryKey(),
+  id: uuid("id").primaryKey().default(uuidv4()),
   name: varchar("name", { length: 100 }).notNull().unique(),
   type: varchar("type", { length: 50 }).notNull(), // "IMEI" or "Server"
 });
 
 export const subservices = pgTable("subservices", {
-  id: serial("id").primaryKey(),
-  serviceId: integer("service_id")
+  id: uuid("id").primaryKey().default(uuidv4()),
+  serviceId: uuid("service_id")
     .references(() => services.id)
     .notNull(),
   name: varchar("name", { length: 100 }).notNull(),
@@ -39,11 +40,11 @@ export const subservices = pgTable("subservices", {
 });
 
 export const orders = pgTable("orders", {
-  id: serial("id").primaryKey(),
-  userId: integer("user_id")
+  id: uuid("id").primaryKey().default(uuidv4()),
+  userId: uuid("user_id")
     .references(() => users.id)
     .notNull(),
-  subserviceId: integer("subservice_id")
+  subserviceId: uuid("subservice_id")
     .references(() => subservices.id)
     .notNull(),
   amount: integer("amount").notNull(), // Amount deducted from balance in cents
