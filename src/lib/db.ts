@@ -1,12 +1,24 @@
-import { Client } from "pg";
+import { drizzle } from "drizzle-orm/node-postgres";
 
-const client = new Client({
+// @ts-ignore
+import { Pool } from "pg";
+
+// Create a new database pool instance
+const pool = new Pool({
   connectionString: process.env.DB_URL,
 });
 
-client
-  .connect()
-  .then(() => console.log("Connected to the database"))
-  .catch((err) => console.error("Connection error", err.stack));
+// Log message when trying to connect
+console.log("Attempting to connect to the database...");
 
-export default client;
+const db = drizzle(pool);
+
+(async () => {
+  try {
+    await pool.connect(); // Ensure the connection is established
+    console.log("Connected to the database successfully!");
+  } catch (err: any) {
+    console.error("Failed to connect to the database:", err.stack);
+  }
+})();
+export default db;

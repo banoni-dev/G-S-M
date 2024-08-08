@@ -1,18 +1,22 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import client from "../../lib/db";
+import { createUser, getAllUsers } from "@/services/userService";
+import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  if (req.method === "GET") {
-    try {
-      const result = await client.query("SELECT * FROM users");
-      res.status(200).json(result.rows);
-    } catch (error) {
-      res.status(500).json({ error: "Database query failed" });
-    }
-  } else {
-    res.status(405).json({ error: "Method not allowed" });
+  const { userId } = req.query;
+
+  switch (req.method) {
+    case "POST": // Create a new user
+      const newUser = await createUser(req.body);
+      res.status(201).json(newUser);
+      break;
+    case "GET":
+      const users = await getAllUsers();
+      res.status(200).json(users);
+    default:
+      res.status(405).json({ message: "Method Not Allowed" });
+      break;
   }
 }
