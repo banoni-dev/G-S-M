@@ -23,11 +23,12 @@ export async function createUser(
 // Get a user by ID
 export async function getUserById(userId: string) {
   try {
-    const user: any = await db
+    const userArray: any = await db
       .select()
       .from(users)
       .where(eq(users.id, userId))
       .limit(1);
+    const user = userArray[0] || null;
     console.log("Fetched user by ID:", user);
     return user;
   } catch (error) {
