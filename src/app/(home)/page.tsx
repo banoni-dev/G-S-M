@@ -10,7 +10,6 @@ export default function Home() {
   return (
     <main className="w-full">
       <NavBar />
-
       <Welcome />
       <ScrollArrow />
       <BackgroundBeams />
