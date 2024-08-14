@@ -1,5 +1,4 @@
 "use client";
-import { ModeToggle } from "@/components/mode-toggle";
 import Link from "next/link";
 
 const navigation = [
@@ -35,7 +34,7 @@ export default function NavBar() {
               </li>
             ))}
           </ul>
-          <ModeToggle />
+          {/*<ModeToggle />*/}
         </div>
       </div>
     </nav>
