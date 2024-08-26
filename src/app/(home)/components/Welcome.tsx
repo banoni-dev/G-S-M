@@ -2,6 +2,7 @@
 
 import { Spotlight } from "@/components/ui/spotlight";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 import { useEffect } from "react";
 
 export default function Welcome() {
@@ -32,19 +33,21 @@ export default function Welcome() {
         </p>
       </div>
       <div>
-        <button
-          className={`inline-flex mt-20 h-12 animate-shimmer items-center justify-center rounded-md border ${
-            theme === "light"
-              ? "border-slate-800 text-[#fff]"
-              : "border-slate-800 text-slate-400"
-          } bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium transition-colors focus:outline-none focus:ring-2 ${
-            theme === "light"
-              ? "focus:ring-white focus:ring-offset-white"
-              : "focus:ring-slate-400 focus:ring-offset-slate-50"
-          }`}
-        >
-          Create an account
-        </button>
+        <Link href="/auth/register">
+          <button
+            className={`inline-flex mt-20 h-12 animate-shimmer items-center justify-center rounded-md border ${
+              theme === "light"
+                ? "border-slate-800 text-[#fff]"
+                : "border-slate-800 text-slate-400"
+            } bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium transition-colors focus:outline-none focus:ring-2 ${
+              theme === "light"
+                ? "focus:ring-white focus:ring-offset-white"
+                : "focus:ring-slate-400 focus:ring-offset-slate-50"
+            }`}
+          >
+            Create an account
+          </button>
+        </Link>
       </div>
     </div>
   );

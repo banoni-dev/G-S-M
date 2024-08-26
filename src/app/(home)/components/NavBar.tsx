@@ -5,7 +5,7 @@ const navigation = [
   { name: "Home", href: "#home", current: true },
   { name: "Services", href: "#services", current: false },
   { name: "Pricing", href: "#pricing", current: false },
-  { name: "Login", href: "#", current: false },
+  { name: "Login", href: "http://localhoost:4000", current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -34,7 +34,6 @@ export default function NavBar() {
               </li>
             ))}
           </ul>
-          {/*<ModeToggle />*/}
         </div>
       </div>
     </nav>
