@@ -32,7 +32,9 @@ export default function SignInForm() {
           Login &rarr;
         </button>
         <p className="text-center">
-          <span className="text-neutral-600">You don't ahve an account ? </span>
+          <span className="text-neutral-600">
+            You already have an account ?{" "}
+          </span>
           <a
             href="#"
             className="text-neutral-800 dark:text-neutral-200 font-medium"
